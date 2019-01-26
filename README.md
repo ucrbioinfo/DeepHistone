@@ -20,8 +20,8 @@ H3K27me3.
 To run run the test_tf.py file
 
 ```
-$ python test_tf.py weights/TFbinding/*.hdf5 <directory of RPKM file>
+$ python test_tf.py weights/TFbinding/*.hdf5 <directory of RPKM file> <output file>
 
 ```
 where * can be any one of the files located in the directory of weights/TFbinding. A sample <RPKM> file is shown
-in the example.  
+in the example.  <output file> refers to the directory of the output file where predicted histone ptm will be stored
