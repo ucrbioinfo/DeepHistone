@@ -71,4 +71,3 @@ np.savetxt(sys.argv[3], y_pred, delimiter=",")
 
 #python test_H3K27me3_TF.py HistoneMark_H3K27me3_TF_ncl_H1.hdf5 histonemodTF_resample_ncl.h5
 #python test_TF.py weights/TFbinding/HistoneMark_H3K27me3_TF_ncl_H1.hdf5 histonemodTF_resample_ncl.h5
-
