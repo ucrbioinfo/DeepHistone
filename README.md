@@ -18,11 +18,55 @@ H3K27me3.
 
 <h4>Run code</h4>
 
-To run run the test_tf.py file
+1. <h5>test_tf.py:<h5> This script is used to get the Histome PTM prediction accuracy from TF bindings. To run it: 
 
 ```
-$ python test_tf.py weights/TFbinding/*.hdf5 <directory of RPKM file> <output file>
+$ python test_tf.py <Cell line> <Weight File for Histone PTM for the Cell line > <Normalized Read count file> <output file>
 
 ```
-where * can be any one of the files located in the directory of weights/TFbinding. A sample <RPKM> file is shown
-in the example.  <output file> refers to the directory of the output file where predicted histone ptm will be stored
+where <Cell line> can be any one of the three: H1, K562 and GM12878. <Weight File for Histone PTM for the Cell line > can be any one of the files located in the directory of weights/TFbinding. A sample <Normalized Read count file> file is shown
+in the 'SampleData' Directory.  <output file> refers to the directory of the output file where predicted histone ptm will be stored
+  
+For Example:
+try: 
+```
+$python test_TF.py GM12878 weights/TFbinding/HistoneMark_H3K9ac_TF_ncl_GM12878.hdf5  SampleData/TF_GM12878.txt output.txt
+```
+
+2. <h5>test_Com_TF.py:<h5> This script is used to get the Histome PTM prediction accuracy from TF binding using 17 common TFs across three cell lines: H1, K562 and GM12878  
+
+```
+$ python test_Com_tf.py  <Weight File for Histone PTM for the Cell line > <Normalized Read count file> <output file>
+
+```
+where  <Weight File for Histone PTM for the Cell line > can be any one of the files located in the directory of weights/CrossCells. A sample <Normalized Read count file> file is shown
+in the 'SampleData' Directory.  <output file> refers to the directory of the output file where predicted histone ptm will be stored
+
+For Example :
+try:
+
+```
+python test_Com_TF.py weights/CrossCells/HistoneMark_H3K4me3_K562_GM.hdf5 SampleData/Common_TF_GM12878.txt output.txt 
+
+```
+
+3. <h5>test_Seq.py:<h5> This script is used to get the Histome PTM prediction accuracy from Sequence centered around the TSS. 
+Features are vector of length 2080 of 6-mer count.
+  
+
+```
+$ python test_Seq.py <Weight File for Histone PTM for the Cell line > <6-mer count file> <output file>
+
+```  
+where  <Weight File for Histone PTM for the Cell line > can be any one of the files located in the directory of weights/Seq. A sample <6-mer count file> file is shown
+in the 'SampleData' Directory.  <output file> refers to the directory of the output file where predicted histone ptm will be stored.
+  
+For example: 
+try:
+
+```
+$python test_seq.py weights/Seq/HistoneMark_H3K4me3_Seq_ncl_H1.hdf5 SampleData/kmer_count.csv output.txt 
+
+```  
+  
+
