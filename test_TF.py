@@ -43,10 +43,16 @@ from keras.utils import plot_model
 
 
 
+if sys.argv[1] == 'H1':
+	dim = 30
+elif sys.argv[2] == 'K562': 	
+	dim =43
+else:
+	dim = 51	
 
 #building model
 model = Sequential()
-model.add(Dense(units=256, input_dim= 30, activation="relu",kernel_initializer='glorot_uniform')) 
+model.add(Dense(units=256, input_dim= dim, activation="relu",kernel_initializer='glorot_uniform')) 
 model.add(Dropout(0.3))
 model.add(Dense(units=180,  activation="relu",kernel_initializer='glorot_uniform'))
 model.add(Dropout(0.3))
@@ -59,15 +65,15 @@ adam = Adam(lr = 0.0001)
 model.compile(loss='binary_crossentropy', optimizer=adam, metrics=['accuracy'])
 
 #loding the weight file
-model.load_weights(sys.argv[1])
+model.load_weights(sys.argv[2])
 
 
 # loading the rpkm file
-testfile = pd.read_csv(sys.argv[2])
-#testfile = h5.File(filename,'r')
-
+testfile = np.loadtxt(sys.argv[3], delimiter= ',')
 y_pred = model.predict(testfile)
-np.savetxt(sys.argv[3], y_pred, delimiter=",")
 
-#python test_H3K27me3_TF.py HistoneMark_H3K27me3_TF_ncl_H1.hdf5 histonemodTF_resample_ncl.h5
-#python test_TF.py weights/TFbinding/HistoneMark_H3K27me3_TF_ncl_H1.hdf5 histonemodTF_resample_ncl.h5
+
+y_pred = y_pred>0.5
+np.savetxt(sys.argv[4], y_pred, delimiter=",")
+
+
