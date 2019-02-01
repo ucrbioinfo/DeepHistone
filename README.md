@@ -12,8 +12,9 @@ H3K27me3.
 2. keras==2.1.3
 3. scikit-learn==0.19.1
 4. numpy==1.13.3
-5. pandas==0.20.3
-6. tensorflow-gpu==1.5.0
+5. h5py==2.7.0
+6. pandas==0.20.3
+7. tensorflow-gpu==1.5.0
 
 <h4>Run code</h4>
 
