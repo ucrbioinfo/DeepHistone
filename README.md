@@ -17,7 +17,8 @@ H3K27me3.
 7. tensorflow-gpu==1.5.0
 
 <h4>Run code</h4>
-**1. samplecleaning.py:** This script is used for data cleaning for both Sequence and TF bindings. To run it:
+
+**1.samplecleaning.py:** This script is used for data cleaning for both Sequence and TF bindings. To run it:
   
 ```
 $ python samplecleaning.py <features file> <label file> 
@@ -27,10 +28,13 @@ $ python samplecleaning.py <features file> <label file>
 **Parameters:**
 
 **features file** contains the features of the sample e.g, 6mer count, normalized readcount 
+
 **label file** contains the binary label of the sample
 
 **Return**
+
 **features.txt:** contains reduced samples with feature vectors    
+
 **labels.txt:** contains the labels of the reduced samples
 
 For Example:
@@ -111,6 +115,7 @@ $ python test_Seq.py <Weight File for Histone PTM for the Cell line > <6-mer cou
 
 
 **Return**
+
 Predicted histone ptm of DeepHistone in **output file**
   
 For example: 
