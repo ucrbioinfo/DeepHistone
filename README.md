@@ -31,7 +31,7 @@ $ python samplecleaning.py <features file> <label file>
 
 **label file** contains the binary label of the sample
 
-**Return**
+**Return:**
 
 **features.txt:** contains reduced samples with feature vectors    
 
@@ -114,7 +114,7 @@ $ python test_Seq.py <Weight File for Histone PTM for the Cell line > <6-mer cou
 **output file** refers to the directory of the output file where predicted histone ptm will be stored.
 
 
-**Return**
+**Return:**
 
 Predicted histone ptm of DeepHistone in **output file**
   
