@@ -17,7 +17,7 @@ H3K27me3.
 7. tensorflow-gpu==1.5.0
 
 <h4>Run code</h4>
-1. <h5> samplecleaning.py: <h5> This script is used for data cleaning for both Sequence and TF bindings. To run it:
+1.<h5> samplecleaning.py: <h5> This script is used for data cleaning for both Sequence and TF bindings. To run it:
   
 ```
 $ python samplecleaning.py <features file> <label file> 
