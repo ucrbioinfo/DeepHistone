@@ -101,11 +101,19 @@ $ python test_Seq.py <Weight File for Histone PTM for the Cell line > <6-mer cou
 
 ```  
 
-where  <Weight File for Histone PTM for the Cell line > can be any one of the files located in the directory of weights/Seq. A sample <6-mer count file> file is shown
-in the 'SampleData' Directory.  <output file> refers to the directory of the output file where predicted histone ptm will be stored.
+**Parameters:**
+
+**Weight File for Histone PTM for the Cell line** can be any one of the files located in the directory of weights/Seq. 
+
+**6-mer count file**  each row contains a vector of length 2080 6mer count. A sample  file is shown in the 'SampleData' Directory.  
+
+**output file** refers to the directory of the output file where predicted histone ptm will be stored.
+
+
+**Return**
+Predicted histone ptm of DeepHistone in **output file**
   
 For example: 
-try:
 
 ```
 $python test_seq.py weights/Seq/HistoneMark_H3K4me3_Seq_ncl_H1.hdf5 SampleData/kmer_count.csv output.txt 
