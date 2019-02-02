@@ -24,9 +24,13 @@ H3K27me3.
 $ python test_tf.py <Cell line> <Weight File for Histone PTM for the Cell line > <Normalized Read count file> <output file>
 
 ```
-<h6>Parameters:<h6> <Cell line> can be any one of the three: H1, K562 and GM12878. <Weight File for Histone PTM for the Cell line > can be any one of the files located in the directory of weights/TFbinding. A sample <Normalized Read count file> file is shown in the 'SampleData' Directory.<output file> refers to the directory of the output file where predicted histone ptm will be stored
+<h6>Parameters:<h6> 
+**Cell line** can be any one of the three: H1, K562 and GM12878. 
+**Weight File for Histone PTM for the Cell line** can be any one of the files located in the directory of weights/TFbinding.
+**Normalized Read count file ** is the normalized readcount file of TFs for Specific histone PTM for a specific cell line. A sample of it is shown in the 'SampleData' Directory.
+**output file** refers to the directory of the output file where predicted histone ptm will be stored
 
-<h6>Return:<h6>Predicted histone ptm of DeepHistone in <output file>
+<h6>Return:<h6> Predicted histone ptm of DeepHistone in **output file**
   
 For Example:
 try: 
