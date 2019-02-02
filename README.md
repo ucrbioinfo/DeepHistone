@@ -17,7 +17,7 @@ H3K27me3.
 7. tensorflow-gpu==1.5.0
 
 <h4>Run code</h4>
-1.** samplecleaning.py:** This script is used for data cleaning for both Sequence and TF bindings. To run it:
+**1. samplecleaning.py:** This script is used for data cleaning for both Sequence and TF bindings. To run it:
   
 ```
 $ python samplecleaning.py <features file> <label file> 
@@ -40,7 +40,7 @@ $ python samplecleaning.py SampleData/TF_CM.csv SampleData/TSS_Label.txt
 ```
 
 
-2. **test_tf.py:** This script is used to get the Histome PTM prediction accuracy from TF bindings. To run it: 
+**2. test_tf.py:** This script is used to get the Histome PTM prediction accuracy from TF bindings. To run it: 
 
 ```
 $ python test_tf.py <Cell line> <Weight File for Histone PTM for the Cell line > <Normalized Read count file> <output file>
@@ -62,29 +62,37 @@ $ python test_tf.py <Cell line> <Weight File for Histone PTM for the Cell line >
 Predicted histone ptm of DeepHistone in **output file**
   
 For Example:
-try: 
 ```
 $python test_TF.py GM12878 weights/TFbinding/HistoneMark_H3K9ac_TF_ncl_GM12878.hdf5  SampleData/TF_GM12878.txt output.txt
 ```
 
-3. **test_Com_TF.py:** This script is used to get the Histome PTM prediction accuracy from TF binding using 17 common TFs across three cell lines: H1, K562 and GM12878  
+**3. test_Com_TF.py:** This script is used to get the Histome PTM prediction accuracy from TF binding using 17 common TFs across three cell lines: H1, K562 and GM12878  
 
 ```
 $ python test_Com_tf.py  <Weight File for Histone PTM for the Cell line > <Normalized Read count file> <output file>
 
 ```
-where  <Weight File for Histone PTM for the Cell line > can be any one of the files located in the directory of weights/CrossCells. A sample <Normalized Read count file> file is shown
-in the 'SampleData' Directory.  <output file> refers to the directory of the output file where predicted histone ptm will be stored
+**Parameters:**
+
+**Weight File for Histone PTM for the Cell line** can be any one of the files located in the directory of weights/TFbinding.
+
+**Normalized Read count file** is the normalized readcount file of TFs for Specific histone PTM for a specific cell line. A sample of it is shown in the 'SampleData' Directory.
+
+**output file** refers to the directory of the output file where predicted histone ptm will be stored
+
+
+**Return:** 
+
+Predicted histone ptm of DeepHistone in **output file**
 
 For Example :
-try:
 
 ```
 python test_Com_TF.py weights/CrossCells/HistoneMark_H3K4me3_K562_GM.hdf5 SampleData/Common_TF_GM12878.txt output.txt 
 
 ```
 
-4. **test_Seq.py:** This script is used to get the Histome PTM prediction accuracy from Sequence centered around the TSS. 
+**4. test_Seq.py:** This script is used to get the Histome PTM prediction accuracy from Sequence centered around the TSS. 
 Features are vector of length 2080 of 6-mer count.
   
 
@@ -92,6 +100,7 @@ Features are vector of length 2080 of 6-mer count.
 $ python test_Seq.py <Weight File for Histone PTM for the Cell line > <6-mer count file> <output file>
 
 ```  
+
 where  <Weight File for Histone PTM for the Cell line > can be any one of the files located in the directory of weights/Seq. A sample <6-mer count file> file is shown
 in the 'SampleData' Directory.  <output file> refers to the directory of the output file where predicted histone ptm will be stored.
   
