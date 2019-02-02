@@ -17,8 +17,31 @@ H3K27me3.
 7. tensorflow-gpu==1.5.0
 
 <h4>Run code</h4>
+1. <h5> samplecleaning.py: <h5> This script is used for data cleaning for both Sequence and TF bindings. To run it:
+  
+```
+$ python samplecleaning.py <features file> <label file> 
 
-1. <h5>test_tf.py:<h5> This script is used to get the Histome PTM prediction accuracy from TF bindings. To run it: 
+```
+
+**Parameters:**
+
+**features file** contains the features of the sample e.g, 6mer count, normalized readcount 
+**label file** contains the binary label of the sample
+
+**Return**
+**features.txt:** contains reduced samples with feature vectors    
+**labels.txt:** contains the labels of the reduced samples
+labels.txt
+For Example:
+try: 
+```
+$ python samplecleaning.py SampleData/TF_CM.csv SampleData/TSS_Label.txt 
+
+```
+
+
+2. <h5>test_tf.py:<h5> This script is used to get the Histome PTM prediction accuracy from TF bindings. To run it: 
 
 ```
 $ python test_tf.py <Cell line> <Weight File for Histone PTM for the Cell line > <Normalized Read count file> <output file>
@@ -45,7 +68,7 @@ try:
 $python test_TF.py GM12878 weights/TFbinding/HistoneMark_H3K9ac_TF_ncl_GM12878.hdf5  SampleData/TF_GM12878.txt output.txt
 ```
 
-2. <h5>test_Com_TF.py:<h5> This script is used to get the Histome PTM prediction accuracy from TF binding using 17 common TFs across three cell lines: H1, K562 and GM12878  
+3. <h5>test_Com_TF.py:<h5> This script is used to get the Histome PTM prediction accuracy from TF binding using 17 common TFs across three cell lines: H1, K562 and GM12878  
 
 ```
 $ python test_Com_tf.py  <Weight File for Histone PTM for the Cell line > <Normalized Read count file> <output file>
